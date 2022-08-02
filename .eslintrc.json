@@ -1,0 +1,107 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "react-app",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": ["./tsconfig.json"]
+  },
+  "plugins": ["react", "@typescript-eslint", "import"],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto",
+        "semi": true
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".md"]
+      }
+    ],
+    "linebreak-style": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/button-has-type": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/no-array-index-key": "off",
+    "import/prefer-default-export": "off",
+    "import/no-named-as-default": "off",
+    "jsx-a11y/media-has-caption": "off",
+    "no-case-declarations": "off",
+    "no-underscore-dangle": "off",
+    "no-param-reassign": "off",
+    "consistent-return": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/ban-types": "off",
+    "class-methods-use-this": "off",
+    "no-nested-ternary": "off",
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        "prefer": "type-imports"
+      }
+    ],
+    "import/no-unresolved": ["error", { "commonjs": true, "amd": true }],
+    "import/named": "error",
+    "import/namespace": "error",
+    "import/default": "error",
+    "import/export": "error",
+    "import/order": [
+      1,
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "external",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"]
+      }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["./**/*.d.ts"],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ]
+}
