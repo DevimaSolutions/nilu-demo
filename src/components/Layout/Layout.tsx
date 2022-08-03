@@ -1,5 +1,7 @@
 import { Box } from '@mui/material';
 
+import Header from '@/components/Header';
+
 import styles from './styles';
 import useLayout from './useLayout';
 
@@ -10,7 +12,7 @@ const Layout = ({ children }: ILayoutProps) => {
 
   return (
     <Box sx={styles.container}>
-      <header>HEADER</header>
+      <Header />
       <main>{children}</main>
     </Box>
   );

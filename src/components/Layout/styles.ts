@@ -1,3 +1,5 @@
+import { dimensions } from '@/config/theme';
+
 import type { Theme } from '@mui/material';
 
 const styles = {
@@ -11,6 +13,7 @@ const styles = {
     '& > main': {
       flexGrow: 1,
       px: 2,
+      pt: dimensions.headerHeight / 8,
       pb: 3,
     },
   },

@@ -1,20 +1,14 @@
-import { Route, Routes as RouterRoutes } from 'react-router-dom';
+import { Navigate, Route, Routes as RouterRoutes } from 'react-router-dom';
 
-import { ChatPage, HomePage, PrivateMessagePage, ShopPage } from '@/pages';
+import routes from '@/config/routes';
 
 function Routes() {
   return (
     <RouterRoutes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/shop">
-        <Route path=":username" element={<ShopPage />} />
-      </Route>
-      <Route path="/private-message">
-        <Route path=":username" element={<PrivateMessagePage />} />
-      </Route>
-      <Route path="/chat">
-        <Route path=":username" element={<ChatPage />} />
-      </Route>
+      {routes.map(({ path, element }) => (
+        <Route key={path} path={path} element={element} />
+      ))}
+      <Route path="*" element={<Navigate to="/" />} />
     </RouterRoutes>
   );
 }

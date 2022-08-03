@@ -1,5 +1,6 @@
 export interface ICreator {
   username: string;
+  fullName: string;
   image: string | null;
   rating: number;
 }
@@ -18,5 +19,6 @@ export type IShopProducts = Record<ShopOption, IShopProductInfo | null>;
 
 export interface IShopState {
   creator: ICreator | null;
+  description: string | null;
   products: IShopProducts;
 }
