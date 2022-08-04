@@ -9,7 +9,14 @@ const getInfo = (creatorUsername: string) =>
       description:
         'Hi! here to make dreamz come true. You can also request a tattoo design instead of message. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id lacus risus.',
       products: {
-        [ShopOption.PrivateMessage]: { price: 25 },
+        [ShopOption.PrivateMessage]: {
+          price: 25,
+          options: [
+            { id: '1', name: 'Private message', price: 25 },
+            { id: '2', name: 'Song request', price: 65 },
+            { id: '3', name: 'Singer consultation', price: 150 },
+          ],
+        },
         [ShopOption.OneToOneSession]: { price: 150 },
         [ShopOption.PremiumContent]: { price: 45 },
       },

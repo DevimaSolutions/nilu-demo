@@ -32,12 +32,12 @@ const Tabs = ({ tabsProps, tabPanelsProps, tabsContainerProps, sx, ...props }: I
           sx={mergeSx(styles.tabsContainer, tabsContainerProps?.sx)}
         >
           {tabsProps.map((tabProps, idx) => (
-            <Tab {...a11yProps(id, idx)} {...tabProps} />
+            <Tab key={idx} {...a11yProps(id, idx)} {...tabProps} />
           ))}
         </MuiTabs>
       </Box>
       {tabPanelsProps.map((tabPanelProps, idx) => (
-        <TabPanel id={id} value={value} index={idx} {...tabPanelProps} />
+        <TabPanel key={idx} id={id} value={value} index={idx} {...tabPanelProps} />
       ))}
     </>
   );

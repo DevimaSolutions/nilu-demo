@@ -1,6 +1,7 @@
 import { ChatPage, HomePage, PrivateMessagePage, ShopPage } from '@/pages';
 
 import type { IRoute } from './types';
+import type { RootState } from '@/redux/store';
 
 const routes: IRoute[] = [
   {
@@ -16,11 +17,10 @@ const routes: IRoute[] = [
     title: 'Private message',
     element: <PrivateMessagePage />,
     canGoBack: true,
-    alwaysHasShadowUnderHeader: true,
   },
   {
     path: '/chat/:username',
-    title: 'Private message',
+    title: (store: RootState) => store.shop.creator?.username ?? '',
     element: <ChatPage />,
     canGoBack: true,
     alwaysHasShadowUnderHeader: true,

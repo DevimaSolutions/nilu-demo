@@ -4,6 +4,9 @@ const styles = {
   productGrid: {
     py: 1.75,
   },
+  tabPanels: {
+    width: '100%',
+  },
   tabs: {
     width: '100%',
   },

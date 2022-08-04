@@ -14,7 +14,7 @@ const Header = () => {
     <Box component="header" sx={mergeSx(styles.container, hasShadow ? styles.bottomShadow : null)}>
       <LeftActions canGoBack={canGoBack} />
       <Typography variant="body2" fontWeight={600}>
-        {pageTitle ?? ''}
+        {pageTitle}
       </Typography>
       <RightActions showMenuDropDown={canGoBack} />
     </Box>

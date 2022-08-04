@@ -11,8 +11,15 @@ export enum ShopOption {
   PremiumContent,
 }
 
+export interface IShopProductOptions {
+  id: string;
+  name: string;
+  price: number;
+}
+
 export interface IShopProductInfo {
   price: number;
+  options: IShopProductOptions[];
 }
 
 export type IShopProducts = Record<ShopOption, IShopProductInfo | null>;

@@ -1,6 +1,5 @@
 import { dimensions } from '@/config/theme';
 
-import type { Theme } from '@mui/material/styles';
 const styles = {
   container: {
     position: 'fixed',
@@ -13,10 +12,12 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'space-between',
     px: 2,
-    transition: 'outline 300ms ease',
+    transition: 'border-bottom-color 300ms ease',
+    borderBottom: '2px solid',
+    borderBottomColor: 'transparent',
   },
   bottomShadow: {
-    outline: (theme: Theme) => `2px solid ${theme.palette.grey[400]}`,
+    borderBottomColor: 'grey.400',
   },
 } as const;
 

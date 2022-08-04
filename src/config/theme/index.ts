@@ -8,6 +8,7 @@ export const colors = {
     7: '#8C8C8C',
     8: '#595959',
     9: '#434343',
+    10: '#262626',
   },
   magenta: {
     5: '#F759AB',
@@ -39,6 +40,7 @@ const theme = createTheme({
       700: colors.grey[7],
       800: colors.grey[8],
       900: colors.grey[9],
+      A100: colors.grey[10],
     },
     magenta: {
       main: colors.magenta[5],

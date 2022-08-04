@@ -22,12 +22,13 @@ const ShopPage = () => {
   const tabPanelsProps = useMemo(
     () => [
       {
+        sx: styles.tabPanels,
         children: (
           <Grid container sx={styles.productGrid} spacing={1.75}>
             {Object.entries(products).map(([key, info]) =>
               info ? (
-                <Grid item xs={6}>
-                  <ShopProductCard key={key} type={key as unknown as ShopOption} {...info} />
+                <Grid item xs={6} key={key}>
+                  <ShopProductCard type={key as unknown as ShopOption} {...info} />
                 </Grid>
               ) : null,
             )}
