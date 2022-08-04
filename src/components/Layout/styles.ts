@@ -15,6 +15,8 @@ const styles = {
       px: 2,
       pt: dimensions.headerHeight / 8,
       pb: 3,
+      display: 'flex',
+      flexDirection: 'column',
     },
   },
 } as const;

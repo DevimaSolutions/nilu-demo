@@ -2,6 +2,7 @@ import { createTheme } from '@mui/material/styles';
 
 export const colors = {
   grey: {
+    3: '#F5F5F5',
     4: '#F0F0F0',
     5: '#D9D9D9',
     6: '#BFBFBF',
@@ -29,11 +30,16 @@ const theme = createTheme({
   palette: {
     primary: {
       main: '#1890FF',
+      light: '#BAE7FF',
+    },
+    error: {
+      main: '#F5222D',
     },
     text: {
       primary: colors.grey[9],
     },
     grey: {
+      300: colors.grey[3],
       400: colors.grey[4],
       500: colors.grey[5],
       600: colors.grey[6],
@@ -98,9 +104,27 @@ const theme = createTheme({
           textTransform: 'none',
           borderRadius: 0.5,
           boxShadow: 'none !important',
-          '&:hover, &:active, &:focused': {
+          '&:hover, &:active, &:focus': {
             boxShadow: 'none !important',
           },
+        },
+      },
+    },
+    MuiCircularProgress: {
+      styleOverrides: {
+        root: {
+          '& svg > circle': {
+            strokeWidth: '2px',
+          },
+        },
+      },
+    },
+    MuiDialog: {
+      styleOverrides: {
+        paper: {
+          padding: 16,
+          borderRadius: 10,
+          maxWidth: 568,
         },
       },
     },

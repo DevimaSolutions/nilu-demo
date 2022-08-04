@@ -1,9 +1,20 @@
+import ChatVideoUploadScreen from '@/components/ChatVideoUploadScreen';
+import PrivateMessageChatScreen from '@/components/PrivateMessageChatScreen';
+
 import useChatPage from './useChatPage';
 
 const ChatPage = () => {
-  useChatPage();
+  const { video, onVideoSubmit, onGoBackToVideoUpload } = useChatPage();
 
-  return <>ChatPage</>;
+  return (
+    <>
+      {video ? (
+        <PrivateMessageChatScreen video={video} onGoBack={onGoBackToVideoUpload} />
+      ) : (
+        <ChatVideoUploadScreen onVideoSubmit={onVideoSubmit} />
+      )}
+    </>
+  );
 };
 
 export default ChatPage;

@@ -1,7 +1,6 @@
-export interface ICreator {
-  username: string;
-  fullName: string;
-  image: string | null;
+import type { IUser } from '@/redux/auth';
+
+export interface ICreator extends IUser {
   rating: number;
 }
 
@@ -24,8 +23,15 @@ export interface IShopProductInfo {
 
 export type IShopProducts = Record<ShopOption, IShopProductInfo | null>;
 
+export interface IPrivateMessageResponse {
+  src?: string;
+  text?: string;
+  time: Date;
+}
 export interface IShopState {
   creator: ICreator | null;
   description: string | null;
   products: IShopProducts;
+  selectedProductOption: IShopProductOptions | null;
+  privateMessageResponse: IPrivateMessageResponse | null;
 }

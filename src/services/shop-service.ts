@@ -17,8 +17,8 @@ const getInfo = (creatorUsername: string) =>
             { id: '3', name: 'Singer consultation', price: 150 },
           ],
         },
-        [ShopOption.OneToOneSession]: { price: 150 },
-        [ShopOption.PremiumContent]: { price: 45 },
+        [ShopOption.OneToOneSession]: { price: 150, options: [] },
+        [ShopOption.PremiumContent]: { price: 45, options: [] },
       },
     }),
   );

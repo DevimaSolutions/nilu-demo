@@ -7,6 +7,7 @@
     "@emotion/styled": "^11.10.0",
     "@mui/material": "^5.9.3",
     "@reduxjs/toolkit": "^1.8.3",
+    "date-fns": "^2.29.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-lines-ellipsis": "^0.15.2",
