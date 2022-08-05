@@ -23,7 +23,6 @@ const useChatVideoUploadScreen = (onVideoSubmit: IChatVideoUploadScreenProps['on
       video.preload = 'metadata';
 
       video.onloadedmetadata = function () {
-        console.log(video);
         res({
           src: video.src,
           duration: video.duration,
