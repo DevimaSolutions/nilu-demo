@@ -6,4 +6,5 @@ export interface IUser {
 
 export interface IAuthState {
   user: IUser;
+  setNavigationDirection: 'forward' | 'backward';
 }

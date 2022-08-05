@@ -1,6 +1,8 @@
 import { Box, Tab, Tabs as MuiTabs } from '@mui/material';
 import { useId, useState } from 'react';
+import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
+import fadeQuick from '@/config/transitions/fade-quick';
 import mergeSx from '@/utils/merge-sx';
 
 import TabPanel from './components/TabPanel';
@@ -36,9 +38,22 @@ const Tabs = ({ tabsProps, tabPanelsProps, tabsContainerProps, sx, ...props }: I
           ))}
         </MuiTabs>
       </Box>
-      {tabPanelsProps.map((tabPanelProps, idx) => (
-        <TabPanel key={idx} id={id} value={value} index={idx} {...tabPanelProps} />
-      ))}
+      <Box sx={fadeQuick} width="100%">
+        <SwitchTransition>
+          <CSSTransition
+            key={value}
+            addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}
+            classNames="fade-quick"
+            timeout={100}
+          >
+            <>
+              {tabPanelsProps.map((tabPanelProps, idx) => (
+                <TabPanel key={idx} id={id} value={value} index={idx} {...tabPanelProps} />
+              ))}
+            </>
+          </CSSTransition>
+        </SwitchTransition>
+      </Box>
     </>
   );
 };

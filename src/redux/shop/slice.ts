@@ -53,7 +53,7 @@ const shopSlice = createSlice({
       state.products = payload.products;
     });
     builder.addCase(simulateCreatorResponse.fulfilled, (state, { payload }) => {
-      state.privateMessageResponse = { src: payload, time: new Date() };
+      state.privateMessageResponse = { src: payload, time: new Date().getTime() };
     });
   },
 });

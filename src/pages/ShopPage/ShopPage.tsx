@@ -35,7 +35,15 @@ const ShopPage = () => {
           </Grid>
         ),
       },
-      { children: null },
+      {
+        children: (
+          <Stack alignItems="center" py={10}>
+            <Typography variant="subtitle1" fontWeight={600}>
+              This feature will be added soon.
+            </Typography>
+          </Stack>
+        ),
+      },
     ],
     [products],
   );

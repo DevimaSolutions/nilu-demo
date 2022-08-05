@@ -1,7 +1,9 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { selectProductOption, ShopOption, shopStateSelector } from '@/redux/shop';
+import useRouteInfo from '@/hooks/useRouteInfo';
+import { getShopInfo, selectProductOption, ShopOption, shopStateSelector } from '@/redux/shop';
 
 import type { IShopProductOptions } from '@/redux/shop';
 import type { AppDispatch } from '@/redux/store';
@@ -19,6 +21,14 @@ const usePrivateMessagePage = () => {
     dispatch(selectProductOption(option.id));
     navigate(`/chat/${creator?.username}`);
   };
+
+  // load creator info when necessary
+  const { pathMatch } = useRouteInfo();
+  useEffect(() => {
+    if (pathMatch?.params.username) {
+      dispatch(getShopInfo(pathMatch?.params.username));
+    }
+  }, [dispatch, pathMatch?.params.username]);
 
   return {
     creator,

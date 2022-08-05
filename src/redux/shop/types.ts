@@ -26,7 +26,7 @@ export type IShopProducts = Record<ShopOption, IShopProductInfo | null>;
 export interface IPrivateMessageResponse {
   src?: string;
   text?: string;
-  time: Date;
+  time: number; //unix timestamp
 }
 export interface IShopState {
   creator: ICreator | null;

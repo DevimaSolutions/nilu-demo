@@ -4,7 +4,7 @@ const styles = {
   container: {
     position: 'fixed',
     display: 'flex',
-    zIndex: 1,
+    zIndex: 2,
     backgroundColor: 'common.white',
     width: '100%',
     maxWidth: '600px',

@@ -1,6 +1,9 @@
+import fadeQuick from '@/config/transitions/fade-quick';
+
 const styles = {
   container: {
     minWidth: 75,
+    ...fadeQuick,
   },
   link: {
     p: 0,

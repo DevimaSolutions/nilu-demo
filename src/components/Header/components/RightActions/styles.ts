@@ -1,3 +1,5 @@
+import fadeQuick from '@/config/transitions/fade-quick';
+
 import type { Theme } from '@mui/material';
 
 const styles = {
@@ -9,6 +11,7 @@ const styles = {
     '& > button': {
       flexShrink: 0,
     },
+    ...fadeQuick,
   },
   avatarButton: {
     p: 0,
